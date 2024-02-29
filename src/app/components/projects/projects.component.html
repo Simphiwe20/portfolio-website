@@ -1,0 +1,22 @@
+<div id="projects" class="main-container full-width flex column">
+    <div class="">
+        <div class="flex center-center">
+            <p class="title width-70">Previous Work</p>
+        </div>
+        <div class="projects" *ngFor="let project of projects">
+            <hr>
+            <div class="middle"></div>
+                <div class="project flex center-center hover">
+                    <div class="width-70 flex gap-2">
+                        <h2>{{project.year}}</h2>
+                        <div class="">
+                            <h2>{{project.name}}</h2>
+                            <p>{{project.technologies}}</p>
+                        </div>
+                    </div>
+                </div>
+            <hr>
+        </div>
+        <div class="cursor"></div>
+    </div>
+</div>

@@ -1,0 +1,114 @@
+$primary-bg-color: #0c0c0c;
+$secondary-bg-color: #2a2a2a;
+$bg-color: #5c564c;
+$hover-color: #eb5939;
+
+
+p {
+    font-weight: 600;
+}
+
+h2 {
+    text-transform:uppercase ;
+}
+
+header p {
+    margin: 0;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.main-container {
+    height: 85% !important;
+}
+
+
+.initials {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: $bg-color;
+    color: #0c0c0c;
+    position: fixed;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+section {
+    // background-image: url('../../../assets/myphoto.jpg');
+    background-size: cover;
+    // width: 50%;
+    border-radius: 20px;
+}
+
+nav span {
+    display: none;
+}
+
+.menu{
+        font-weight: 700;
+        cursor: pointer;
+        font-weight: 900;
+    }
+
+.icon {
+    height: 90%;
+}
+
+
+.welcome {
+
+    // width: 20%;
+    h1 {
+        font-weight: 600;
+        font-size: 60px;
+        margin: 0;
+        text-align: center;
+    }
+
+    span {
+        display: block;
+    }
+
+    p {
+        margin: 0;
+    }
+}
+
+.fixed {
+    position: fixed;
+    right: 35px
+}
+
+.relative {
+    position: relative;
+}
+
+.icons {
+    position: fixed;
+    bottom: 80px;
+}
+
+.color-change {
+    color: $hover-color;
+}
+
+@media only screen and (max-width: 750px) {
+    .main-container {
+        height: 70% !important;
+    }
+
+    .icons {
+        position: fixed;
+        bottom: 350px;
+    }
+
+}

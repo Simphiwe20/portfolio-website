@@ -1,0 +1,57 @@
+<div #home class="main-container full-height flex column center-center">
+    <!-- <div class="cursor" id="cursor">
+        
+    </div> -->
+    <div class="width-95 height-95">
+        <header class=" full-width flex spacebetween ">
+            <div>
+                <div class="initials flex center-center">
+                    <h4 class="no-margin">SN</h4>
+                </div>
+            </div>
+            <nav>
+                <div class="fixed">
+                    <div *ngFor="let menu of menuItems">
+                        <p class="menu" (click)="navigate()" [routerLink]="menu.route">{{menu.label}}</p>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="flex column full-width gap-2">
+            <div class="relative">
+                <div class="icons">
+                    <div class="m-b-80 flex column col-start-end gap-2">
+                        <img class="pointer" *ngFor="let icon of icons" [matTooltip]='icon.tooltip'
+                            [src]="icon.iconLink" [alt]="icon.name">
+                    </div>
+                </div>
+            </div>
+
+            <section *ngIf="!Isnavigated || !isShowMore" class="flex column flex-1 col-start-center">
+                <p class="no-m anime">Simphiwe Nene</p>
+                <div class="welcome flex center-center">
+                    <h1> <span class="anime">DOING</span> <span class="anime">SOMETHING</span> <span class="anime color-change">COOL
+                            & GREAT</span> <span class="anime"> SINCE</span> <span class="anime"> 2023</span></h1>
+                </div>
+            </section>
+            <div class="full-height full-width" *ngIf="Isnavigated">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main-container flex column center-center">
+    <div class="" *ngIf="!Isnavigated">
+        <app-about (isReadMore)="hideOthers($event)"></app-about>
+    </div>
+</div>
+<div class="main-container flex-1 full-width" *ngIf="!isShowMore">
+    <div class="" *ngIf="!Isnavigated">
+        <app-projects></app-projects>
+    </div>
+</div>
+<div class="main-container flex-1 m-t-70 full-width" *ngIf="!isShowMore">
+    <div class="" *ngIf="!Isnavigated">
+        <app-contacts></app-contacts>
+    </div>
+</div>

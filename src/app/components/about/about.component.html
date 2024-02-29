@@ -1,0 +1,109 @@
+<div id="about" class="main-container flex column center-center" *ngIf='!isShowMore'>
+    <div class="height-70 width-70">
+        <p class="title">About Me</p>
+        <p class="about"> <span class="about-anime">I love Web development, UI Design and System</span> <span
+                class="about-anime"> Analysis. I am a <span class="colored-word">selectively skilled</span> web </span>
+            <span class="about-anime">developer with strong focus on producing high </span><span
+                class="about-anime">quality and impactful web-based systems</span>
+        </p>
+        <button mat-stroked-button class="btn" (click)="showMore()">Read More</button>
+    </div>
+</div>
+<div id="about" *ngIf='isShowMore' class="main-container full-height flex column center-center">
+    <div class="height-70 width-70">
+        <p class="title">About Me</p>
+        <p class="about"> <span class="about-anime">I love Web development, UI Design and System</span> <span
+                class="about-anime"> Analysis. I am a <span class="colored-word">selectively skilled</span> web </span>
+            <span class="about-anime">developer with strong focus on producing high </span><span
+                class="about-anime">quality and impactful web-based systems</span>
+        </p>
+        <div>
+            <div class="flex column gap-1">
+                <div class="gap-1 flex col-start-center">
+                    <div class="flex column">
+                        <hr class="hr">
+                    </div>
+                    <p class="number-font">01</p>
+                    <p class="header-font">WHO AM I</p>
+                </div>
+                <div class="">
+                    <p>Simphiwe Nene</p>
+                    <div class="flex gap-1 cards">
+                        <mat-card class="padding-20 half-width">
+                            <article>
+                                <p>I was born on the 26th of August 1998 in a small village called Emfundweni Thirst
+                                    Farm in
+                                    Newcastle.</p>
+                                <p>I did my schooling there and matriculated in 2016, went to varsity after that and i
+                                    obtained my BCom MIS in 2020</p>
+                                <p>I am currently doing a MEAN stack program in Afrika Tikkun and it is provided by a
+                                    great international company called Neutrinos.</p>
+                            </article>
+                        </mat-card>
+                        <mat-card class="flex-1">
+                            <img src="../../../assets/myphoto.jpg" alt="">
+                        </mat-card>
+                    </div>
+                </div>
+            </div>
+            <div class="flex column gap-1">
+                <div class="gap-1 flex col-start-center">
+                    <div class="flex column">
+                        <hr class="hr">
+                    </div>
+                    <p class="number-font">02</p>
+                    <p class="header-font">PASSION</p>
+                </div>
+                <div class="flex gap-1 cards">
+                    <mat-card class="half-width padding-20">
+                        <div class="flex full-width center-center">
+                            <img class="passion-icon" src="../../../assets/icon-technology.svg" alt="">
+                        </div>
+                        <h2 class="center-text">Technology</h2>
+                        <p>This passion comes from my eager to bring positive change and solutions in the world</p>
+                        <p>Being a developer enables me to fire up my passion for technology because it allows me to use
+                            my skills and solve real life problems.</p>
+                    </mat-card>
+                    <mat-card class="flex-1 padding-20">
+                        <div class="flex full-width center-center">
+                            <img class="passion-icon" src="../../../assets/icons8-design-50.svg" alt="">
+                        </div>
+                        <h2 class="center-text">Design</h2>
+                        <p>Design enables me to structure my thoughts properly and build cool things.</p>
+                        <p>For me every work is a form of art, getting to see the final product of a person allows me to
+                            see through them like understanding their trail of thoughts when they were building that
+                            final product</p>
+                    </mat-card>
+                </div>
+            </div>
+            <div class="flex column gap-1">
+                <div class="gap-1 flex col-start-center">
+                    <div class="flex column">
+                        <hr class="hr">
+                    </div>
+                    <p class="number-font">03</p>
+                    <p class="header-font">SKILL SET</p>
+                </div>
+                <div class="flex skills-container center-center">
+                    <div class="width-95 flex column gap-05">
+                        <div *ngFor="let skill of skills" class="flex gap-05">
+                            <img [src]="skill.icon" alt="">
+                            <div class="flex slider column">
+                                <div class="flex spacebetween-center">
+                                    <div class="flex center-center gap-2">
+                                        <p class="no-m p-w">{{skill.name}}</p>
+                                        <small>{{skill.exp}}</small>
+                                    </div>
+                                    <p class="no-m">{{skill.per}}</p>
+                                </div>
+                                <mat-slider>
+                                    <input disabled [value]="skill.value" matSliderThumb>
+                                </mat-slider>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

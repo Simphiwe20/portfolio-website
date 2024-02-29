@@ -1,1 +1,204 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Rubik+Bubbles&display=swap');
+@import url("@angular/material/prebuilt-themes/indigo-pink.css");
+
+$primary-bg-color: #0c0c0c;
+$secondary-bg-color: #2a2a2a;
+$hover-color: #eb5939;
+$color: #5c564c;
+
+
+html, body { 
+    height: 100%;
+    background: linear-gradient(90deg, rgb(12, 12, 12) 25%, rgb(42, 42, 42) 51%, rgb(12, 12, 12) 75%);
+    // background-image: linear-gradient(to right , $secondary-bg-color, $primary-bg-color);
+}
+body { margin: 0; 
+    font-family: "Poppins", sans-serif; 
+    font-style: normal;
+    color: $color; }
+
+// Size 
+
+.full-height {
+    height: 100vh;
+}
+
+.half-width {
+    width: 50%;
+}
+
+.width-45 {
+    width: 45%;
+}
+
+.height-95 {
+    height: 85%;
+}
+
+.width-95 {
+    width: 95%;
+}
+
+.height-70 {
+    height: 70%;
+} 
+
+.width-70 {
+    width: 70%;
+}
+
+.main-container {
+    // background-image: linear-gradient(to right , $secondary-bg-color, $primary-bg-color);
+    // background-image: radial-gradient($primary-bg-color, $secondary-bg-color);
+}
+
+
+// Flex styles
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.center-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.spacebetween {
+    justify-content: space-between;
+}
+
+.spacebetween-center {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.center-start {
+    justify-content: center;
+}
+
+.start-flex-end {
+    align-items: end;
+}
+
+.col-start-end {
+    justify-content: end;
+}
+
+.col-start-center {
+    align-items: center;
+}
+
+.flex-1 {
+    flex: 1
+}
+
+.gap-2 {
+    gap: 2em;
+}
+
+.gap-1 {
+    gap: 1em
+}
+
+.gap-05 {
+    gap: 0.5em;
+}
+
+// Font styles
+.colored-word {
+    color: $hover-color;
+}
+
+.center-text {
+    text-align: center;
+}
+
+
+// margin and padding
+.no-m {
+    margin: 0;
+}
+
+.m-t-70 {
+    margin-top: 70px;
+}
+
+.m-b-80 {
+    margin-bottom: 80px;
+}
+
+.padding-20 {
+    padding: 20px;
+}
+
+// Cursor
+
+// .cursor {
+//     position: absolute;
+//     width: 40px;
+//     height: 40px;
+//     margin-left: -20px;
+//     margin-top: -20px;
+//     border-radius: 50%;
+//     border: 2px solid $secondary-bg-color;
+//     transition: transform .1s ease;
+//     transform-origin: center center;
+//     pointer-events: none;
+//     z-index: 1000;
+//     background-color: $hover-color;
+// }
+
+.pointer {
+    cursor: pointer;
+}
+
+.btn {
+    background-color: $hover-color !important;
+    color: $color !important;
+}
+
+//  horizontal line 
+
+.hr {
+    height: 3px !important;
+    width: 30px !important;
+    background-color: $hover-color !important;
+    margin-top: 35px !important;
+    border: none !important;
+}
+
+mat-card {
+    background-image: linear-gradient(to right , $secondary-bg-color, $primary-bg-color);
+
+}
+
+// Icon styling
+.passion-icon {
+    color: $hover-color;
+}
+
+// .mat-mdc-slider.mdc-slider--disabled 
+// .mdc-slider__track--active_fill {
+//     border-color: $hover-color !important;
+// }
+
+// .mat-mdc-slider.mdc-slider--disabled 
+// .mdc-slider__thumb-knob {
+//     background-color: $hover-color !important;
+// }
+
+.mat-mdc-slider.mdc-slider--disabled 
+.mdc-slider__track--inactive {
+    background-color: $hover-color !important;
+}
+
+// Styling the inputs
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: #5c564c !important;
+}
