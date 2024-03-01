@@ -3,10 +3,10 @@
         <p class="">Reach Out</p>
         <form [formGroup]="contactForm" class="flex column gap-1">
             <mat-form-field class="example-full-width">
-                <mat-label>Name and Surname</mat-label>
+                <mat-label>Name</mat-label>
                 <input formControlName="name" type="text" matInput placeholder="Ex. pat@example.com">
                 <mat-error *ngIf="contactForm.get('name')?.hasError('required')">
-                    Email is <strong>required</strong>
+                    Name is <strong>required</strong>
                 </mat-error>
             </mat-form-field>
             <mat-form-field class="example-full-width">
