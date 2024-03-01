@@ -12,7 +12,7 @@
             <nav>
                 <div class="fixed">
                     <div *ngFor="let menu of menuItems">
-                        <p class="menu" (click)="navigate()" [routerLink]="menu.route">{{menu.label}}</p>
+                        <p class="menu" (click)="navigate(menu.name)" routerLinkActive="link" [routerLink]="menu.route">{{menu.label}}</p>
                     </div>
                 </div>
             </nav>
@@ -27,7 +27,7 @@
                 </div>
             </div>
 
-            <section *ngIf="!Isnavigated || !isShowMore" class="flex column flex-1 col-start-center">
+            <section class="flex column flex-1 col-start-center">
                 <p class="no-m anime">Simphiwe Nene</p>
                 <div class="welcome flex center-center">
                     <h1> <span class="anime">DOING</span> <span class="anime">SOMETHING</span> <span class="anime color-change">COOL
@@ -40,18 +40,18 @@
         </div>
     </div>
 </div>
-<div class="main-container flex column center-center">
-    <div class="" *ngIf="!Isnavigated">
+<div id="about" class="main-container flex column center-center">
+    <div class="">
         <app-about (isReadMore)="hideOthers($event)"></app-about>
     </div>
 </div>
-<div class="main-container flex-1 full-width" *ngIf="!isShowMore">
-    <div class="" *ngIf="!Isnavigated">
+<div id="projects" class="main-container flex-1 full-width" *ngIf="!isShowMore">
+    <div class="" >
         <app-projects></app-projects>
     </div>
 </div>
-<div class="main-container flex-1 m-t-70 full-width" *ngIf="!isShowMore">
-    <div class="" *ngIf="!Isnavigated">
+<div id="contacts" class="main-container flex-1 m-t-70 full-width" *ngIf="!isShowMore">
+    <div class="" >
         <app-contacts></app-contacts>
     </div>
 </div>

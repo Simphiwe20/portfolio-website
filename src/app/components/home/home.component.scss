@@ -36,7 +36,7 @@ header p {
     background-color: $bg-color;
     color: #0c0c0c;
     position: fixed;
-
+    z-index: 1000;
     &:hover {
         cursor: pointer;
     }
@@ -49,8 +49,11 @@ section {
     border-radius: 20px;
 }
 
-nav span {
+nav {
+    z-index: 100;
+    span {
     display: none;
+} 
 }
 
 .menu{
@@ -61,6 +64,10 @@ nav span {
 
 .icon {
     height: 90%;
+    img {
+        height: 40px;
+        width: 40px;
+    }
 }
 
 
@@ -95,6 +102,11 @@ nav span {
 .icons {
     position: fixed;
     bottom: 80px;
+    z-index: 100;
+}
+
+.link {
+    color: $bg-color;
 }
 
 .color-change {

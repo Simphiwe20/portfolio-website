@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 // typical import
 import gsap from "gsap";
 import { Draggable, Flip, MotionPathPlugin, ScrollTrigger } from 'gsap/all';
@@ -18,9 +19,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
   // @ViewChild('cursor') cursor!: ElementRef
   cursor: any;
   menuItems: any = [
-    { label: 'About', route: '/home/about' },
-    { label: 'Projects', route: '/home/projects' },
-    { label: 'Contacts', route: '/home/contacts' },
+    {name: 'about', label: 'About', route: '/home/about' },
+    {name: 'projects', label: 'Projects', route: '/home/projects' },
+    {name: 'contacts', label: 'Contacts', route: '/home/contacts' },
   ]
   section: any;
   icons: any[] = [{name: 'LinkedIn icon', iconLink: '../../../assets/linkedin.svg', tooltip: 'Check my linkedIn account'}, {name: 'Github icon', iconLink: '../../../assets/github.svg', tooltip: 'Check my github account'},
@@ -28,12 +29,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
   Isnavigated: boolean = false
   isShowMore: boolean = false
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
-    // this.landing() 
+    this.listenToRoute()
     this.cursor = document.querySelector('#cursor')
-
   }
 
   ngAfterViewInit() {
@@ -41,8 +41,24 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.section = document.querySelector('section')
   }
 
-  navigate(): void {
-    this.Isnavigated = true
+  navigate(fragment: any): void {
+    // this.Isnavigated = true
+    this.router.navigateByUrl(`home#${fragment}`)
+  }
+
+  listenToRoute(): void {
+    this.router.events.subscribe(event => {
+      console.log(event)
+      if(event instanceof NavigationEnd) {
+        this.menuItems.forEach((menu: any) => {
+          if(menu.name === event.url.split('#')[1]) {
+            this.Isnavigated = true
+          }
+
+        })
+      }
+    })
+    console.log(this.Isnavigated)
   }
 
   hideOthers(status: boolean): void {

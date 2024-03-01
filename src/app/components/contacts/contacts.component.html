@@ -21,20 +21,20 @@
             </mat-form-field>
             <mat-form-field class="example-full-width">
                 <mat-label>CellPhone Number</mat-label>
-                <input formControlName="number" type="number" matInput placeholder="Ex. pat@example.com">
-                <mat-error *ngIf="contactForm.get('number')?.hasError('required')">
+                <input formControlName="cellNumber" type="number" matInput placeholder="Ex. pat@example.com">
+                <mat-error *ngIf="contactForm.get('cellNumber')?.hasError('required')">
                     Cellphone number is <strong>required</strong>
                 </mat-error>
-                <mat-error *ngIf="contactForm.get('number')?.hasError('pattern')">
+                <!-- <mat-error *ngIf="contactForm.get('number')?.hasError('pattern')">
                     Please enter a valid cellphone number
-                </mat-error>
+                </mat-error> -->
             </mat-form-field>
             <mat-form-field class="example-full-width">
                 <mat-label>Leave a comment</mat-label>
                 <textarea formControlName="comment" matInput placeholder="Ex. It makes me feel..."></textarea>
             </mat-form-field>
             <div class="flex center-center">
-                <button mat-raised-button class="btn">Submit</button>
+                <button mat-raised-button class="btn" (click)="submit()">Submit</button>
             </div>
         </form>
         <div class="flex spacebetween-center">

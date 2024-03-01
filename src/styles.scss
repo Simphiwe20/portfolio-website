@@ -16,7 +16,8 @@ html, body {
 body { margin: 0; 
     font-family: "Poppins", sans-serif; 
     font-style: normal;
-    color: $color; }
+    color: $color; 
+}
 
 // Size 
 
@@ -202,3 +203,6 @@ mat-card {
 .mdc-text-field--filled:not(.mdc-text-field--disabled) {
     background-color: #5c564c !important;
 }
+
+// Scroll bar
+::-webkit-scrollbar {display:none;} 

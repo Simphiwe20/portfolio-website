@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { ApiServicesService } from 'src/app/services/api-services.service';
 
 @Component({
   selector: 'app-contacts',
@@ -10,14 +13,14 @@ export class ContactsComponent {
 
   contactForm: FormGroup
   emailPattern: any = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
-  numberPattern: any = /^(\+27|0)[6-8][0-9]{8}$/
+  numberPattern: any = /^[0-9]/
 
-  constructor() {
+  constructor(private api: ApiServicesService, private snackar: MatSnackBar) {
 
     this.contactForm = new FormGroup({
       name: new FormControl('',[Validators.required, Validators.min(3)]),
       email: new FormControl('',[Validators.required, Validators.pattern(this.emailPattern)]),
-      number: new FormControl('',[Validators.required, Validators.min(10), Validators.max(13)]),
+      cellNumber: new FormControl('',[Validators.required]),
       comment: new FormControl(''),
 
     })
@@ -25,6 +28,22 @@ export class ContactsComponent {
 
   submit(): any {
     if(!this.contactForm.valid) return
+
+    let contactInfor = this.contactForm.value
+
+    this.api.genericPost('/add-comments', contactInfor)
+      .subscribe({
+        next: (res) => {
+          console.log(res)
+          this.snackar.open('Comment Added successfully', 'OK', {duration: 3000})
+        },
+        error: (err) => {
+          console.log(err)
+          this.snackar.open(err.error.Error, 'OK', {duration: 3000})
+        },
+        complete: () => {}
+      })
+
     
   }
 }
