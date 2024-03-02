@@ -1,7 +1,7 @@
 <div #home class="main-container full-height flex column center-center">
     <div class="width-70 height-95">
         <p class="">Reach Out</p>
-        <form [formGroup]="contactForm" class="flex column gap-1">
+        <form [formGroup]="contactForm" class="flex column gap-1" *ngIf="!isSubmitted">
             <mat-form-field class="example-full-width">
                 <mat-label>Name</mat-label>
                 <input formControlName="name" type="text" matInput placeholder="Ex. pat@example.com">
@@ -37,7 +37,10 @@
                 <button mat-raised-button class="btn" (click)="submit()">Submit</button>
             </div>
         </form>
-        <div class="flex spacebetween-center">
+        <div class="feedback flex center-center" *ngIf="isSubmitted">
+            <p>Thank you for reaching out.</p>
+        </div>
+        <div class="contact flex spacebetween-center">
             <p>gsimphiwe212@gmail.com</p>
             <p>062 810 7203</p>
         </div>

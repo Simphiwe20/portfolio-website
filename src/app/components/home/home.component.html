@@ -12,7 +12,7 @@
             <nav>
                 <div class="fixed">
                     <div *ngFor="let menu of menuItems">
-                        <p class="menu" (click)="navigate(menu.name)" routerLinkActive="link" [routerLink]="menu.route">{{menu.label}}</p>
+                        <p class="menu" (click)="navigate(menu.name)" [class.color-change]="menu.clickedOn" routerLinkActive="link" [routerLink]="menu.route">{{menu.label}}</p>
                     </div>
                 </div>
             </nav>

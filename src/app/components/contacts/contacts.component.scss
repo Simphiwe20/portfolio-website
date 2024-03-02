@@ -1,0 +1,9 @@
+.feedback {
+    height: calc(100% - 55px);
+}
+
+@media only screen and (max-width: 750px) {
+    .contact {
+        flex-wrap: wrap;
+    }
+}

@@ -14,6 +14,7 @@ export class ContactsComponent {
   contactForm: FormGroup
   emailPattern: any = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
   numberPattern: any = /^[0-9]/
+  isSubmitted: boolean = false
 
   constructor(private api: ApiServicesService, private snackar: MatSnackBar) {
 
@@ -34,6 +35,7 @@ export class ContactsComponent {
     this.api.genericPost('/add-comments', contactInfor)
       .subscribe({
         next: (res) => {
+          this.isSubmitted = true
           console.log(res)
           this.snackar.open('Comment Added successfully', 'OK', {duration: 3000})
         },

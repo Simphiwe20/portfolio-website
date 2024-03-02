@@ -19,13 +19,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
   // @ViewChild('cursor') cursor!: ElementRef
   cursor: any;
   menuItems: any = [
-    {name: 'about', label: 'About', route: '/home/about' },
-    {name: 'projects', label: 'Projects', route: '/home/projects' },
-    {name: 'contacts', label: 'Contacts', route: '/home/contacts' },
+    {name: 'about', label: 'About', route: '/home/about', clickedOn: false},
+    {name: 'projects', label: 'Projects', route: '/home/projects', clickedOn: false},
+    {name: 'contacts', label: 'Contacts', route: '/home/contacts', clickedOn: false},
   ]
   section: any;
   icons: any[] = [{name: 'LinkedIn icon', iconLink: '../../../assets/linkedin.svg', tooltip: 'Check my linkedIn account'}, {name: 'Github icon', iconLink: '../../../assets/github.svg', tooltip: 'Check my github account'},
-                    {name: 'Facebook icon', iconLink: '../../../assets/facebook.svg', tooltip: 'Check my favenook account'}, {name: 'Instagram icon', iconLink: '../../../assets/instagram.svg', tooltip: 'Check my instagram account'}];
+                  {name: 'Facebook icon', iconLink: '../../../assets/facebook.svg', tooltip: 'Check my favenook account'}, {name: 'Instagram icon', iconLink: '../../../assets/instagram.svg', tooltip: 'Check my instagram account'}];
   Isnavigated: boolean = false
   isShowMore: boolean = false
 
@@ -51,10 +51,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
       console.log(event)
       if(event instanceof NavigationEnd) {
         this.menuItems.forEach((menu: any) => {
-          if(menu.name === event.url.split('#')[1]) {
+          menu['clickedOn'] = false
+          if(event.url.includes(menu.name)) {
             this.Isnavigated = true
+            console.log('It is true')
+            menu['clickedOn'] = true
+            console.log(this.menuItems)
           }
-
         })
       }
     })
