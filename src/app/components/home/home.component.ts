@@ -15,6 +15,9 @@ gsap.registerPlugin(ScrollTrigger, Draggable, Flip, MotionPathPlugin);
 })
 export class HomeComponent implements OnInit, AfterViewInit {
 
+  viewCount: number = 0
+  likeCount: number =0
+
   @ViewChild('home', { static: true }) home!: ElementRef<HTMLDivElement>
   // @ViewChild('cursor') cursor!: ElementRef
   cursor: any;
@@ -24,12 +27,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
     {name: 'contacts', label: 'Contacts', route: '/home/contacts', clickedOn: false},
   ]
   section: any;
-  icons: any[] = [{name: 'LinkedIn icon', iconLink: '../../../assets/linkedin.svg', tooltip: 'Check my linkedIn account'}, {name: 'Github icon', iconLink: '../../../assets/github.svg', tooltip: 'Check my github account'},
-                  {name: 'Facebook icon', iconLink: '../../../assets/facebook.svg', tooltip: 'Check my favenook account'}, {name: 'Instagram icon', iconLink: '../../../assets/instagram.svg', tooltip: 'Check my instagram account'}];
+  icons: any[] = [{name: 'LinkedIn icon', iconLink: '../../../assets/linkedin.svg', tooltip: 'Check my linkedIn account', link: 'https://www.linkedin.com/in/simphiwe-gift-nene-2460151a2/'}, {name: 'Github icon', iconLink: '../../../assets/github.svg', tooltip: 'Check my github account', link: 'https://github.com/Simphiwe20'},
+                  {name: 'Facebook icon', iconLink: '../../../assets/facebook.svg', tooltip: 'Check my favenook account', link: 'https://www.facebook.com/mbhele.dlamini/'}, {name: 'Instagram icon', iconLink: '../../../assets/instagram.svg', tooltip: 'Check my instagram account', link: 'https://www.linkedin.com/in/simphiwe-gift-nene-2460151a2/'}];
   Isnavigated: boolean = false
   isShowMore: boolean = false
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) { 
+    this.viewCount++
+  }
 
   ngOnInit(): void {
     this.listenToRoute()
@@ -54,14 +59,17 @@ export class HomeComponent implements OnInit, AfterViewInit {
           menu['clickedOn'] = false
           if(event.url.includes(menu.name)) {
             this.Isnavigated = true
-            console.log('It is true')
             menu['clickedOn'] = true
-            console.log(this.menuItems)
+
           }
         })
       }
     })
     console.log(this.Isnavigated)
+  }
+
+  countLike(): void {
+    this.likeCount++
   }
 
   hideOthers(status: boolean): void {

@@ -6,13 +6,14 @@
         <header class=" full-width flex spacebetween ">
             <div>
                 <div class="initials flex center-center">
-                    <h4 class="no-margin">SN</h4>
+                    <h4 class="no-margin" routerLink="/home">SN</h4>
                 </div>
             </div>
             <nav>
                 <div class="fixed">
                     <div *ngFor="let menu of menuItems">
-                        <p class="menu" (click)="navigate(menu.name)" [class.color-change]="menu.clickedOn" routerLinkActive="link" [routerLink]="menu.route">{{menu.label}}</p>
+                        <p class="menu" (click)="navigate(menu.name)" [class.color-change]="menu.clickedOn"
+                            routerLinkActive="link" [routerLink]="menu.route">{{menu.label}}</p>
                     </div>
                 </div>
             </nav>
@@ -20,9 +21,12 @@
         <div class="flex column full-width gap-2">
             <div class="relative">
                 <div class="icons">
-                    <div class="m-b-80 flex column col-start-end gap-2">
-                        <img class="pointer" *ngFor="let icon of icons" [matTooltip]='icon.tooltip'
+                    <div class="m-b-80 flex column col-start-end gap-2 pic">
+                        <a [href]="icon.link" *ngFor="let icon of icons" target="_blank">
+                            <img class="pointer"  [matTooltip]='icon.tooltip'
                             [src]="icon.iconLink" [alt]="icon.name">
+                        </a>
+                        
                     </div>
                 </div>
             </div>
@@ -30,7 +34,8 @@
             <section class="flex column flex-1 col-start-center">
                 <p class="no-m anime">Simphiwe Nene</p>
                 <div class="welcome flex center-center">
-                    <h1> <span class="anime">DOING</span> <span class="anime">SOMETHING</span> <span class="anime color-change">COOL
+                    <h1> <span class="anime">DOING</span> <span class="anime">SOMETHING</span> <span
+                            class="anime color-change">COOL
                             & GREAT</span> <span class="anime"> SINCE</span> <span class="anime"> 2023</span></h1>
                 </div>
             </section>
@@ -46,12 +51,24 @@
     </div>
 </div>
 <div id="projects" class="main-container flex-1 full-width" *ngIf="!isShowMore">
-    <div class="" >
+    <div class="">
         <app-projects></app-projects>
     </div>
 </div>
 <div id="contacts" class="main-container flex-1 m-t-70 full-width" *ngIf="!isShowMore">
-    <div class="" >
+    <div class="">
         <app-contacts></app-contacts>
+        <div class="fixed b-r flex gap-05">
+            <div class="flex center-center">
+                <small>{{likeCount}}</small>
+                <mat-icon class="pointer fav" (click)="countLike()">favorite</mat-icon>
+            </div>
+            <div class="flex center-center">
+                <small>1</small>
+                <mat-icon>visibility</mat-icon>
+            </div>
+
+        </div>
+
     </div>
 </div>

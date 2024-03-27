@@ -101,7 +101,7 @@ nav {
 
 .icons {
     position: fixed;
-    bottom: 80px;
+    bottom: 0px;
     z-index: 100;
 }
 
@@ -112,6 +112,31 @@ nav {
 .color-change {
     color: $hover-color;
 }
+
+.fav {
+    &:hover {
+        color: #eb5939;
+    }
+}
+
+.b-r {
+    bottom: 0;
+    right: 50px;
+}
+
+.margin-l {
+    margin-left: 20px;
+}
+
+#contacts {
+    margin-top: 300px;
+}
+
+img {
+    width: 30px;
+    height: 30px;
+}
+
 
 @media only screen and (max-width: 750px) {
     .main-container {

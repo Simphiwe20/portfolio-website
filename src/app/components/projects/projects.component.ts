@@ -15,10 +15,10 @@ gsap.registerPlugin(ScrollTrigger, Draggable, Flip, MotionPathPlugin);
 export class ProjectsComponent implements AfterViewInit{
 
   projects: any[] = [
-  {name: 'Operations Systems', year: 'Feb 2024', technologies: 'Angular JS & Express JS'},
-  {name: 'Weather App', year: 'Dec 2023', technologies:'HTML, CSS & JS'},
-  {name: 'Basic Calculator', year: 'Nov 2023', technologies: 'HTML, CSS, JS'},
-  {name: 'Web-based portfolio', year: 'Nov 2023', technologies: 'HTML, CSS'}
+  {name: 'Operations Systems', year: 'Feb 2024', technologies: 'Angular JS & Express JS', link: 'https://github.com/Simphiwe20/operations-system.git'},
+  {name: 'Weather App', year: 'Dec 2023', technologies:'HTML, CSS & JS', link: 'https://github.com/Simphiwe20/operations-system.git'},
+  {name: 'Basic Calculator', year: 'Nov 2023', technologies: 'HTML, CSS, JS', link: 'https://github.com/Simphiwe20/operations-system.git'},
+  {name: 'Web-based portfolio', year: 'Nov 2023', technologies: 'HTML, CSS', link: 'https://github.com/Simphiwe20/operations-system.git'}
 ]
   cursor: any
 
