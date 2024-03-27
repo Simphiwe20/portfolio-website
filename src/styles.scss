@@ -145,21 +145,6 @@ body { margin: 0;
     cursor: pointer;
 }
 
-// .cursor {
-//     position: absolute;
-//     width: 40px;
-//     height: 40px;
-//     margin-left: -20px;
-//     margin-top: -20px;
-//     border-radius: 50%;
-//     border: 2px solid $secondary-bg-color;
-//     transition: transform .1s ease;
-//     transform-origin: center center;
-//     pointer-events: none;
-//     z-index: 1000;
-//     background-color: $hover-color;
-// }
-
 .pointer {
     cursor: pointer;
 }
@@ -170,7 +155,6 @@ body { margin: 0;
 }
 
 //  horizontal line 
-
 .hr {
     height: 3px !important;
     width: 30px !important;

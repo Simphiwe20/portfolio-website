@@ -75,3 +75,11 @@ mat-slider > input {
     }
     
 }
+
+@media only screen and (max-width: 550px) { 
+    .about {
+        font-size: large;
+        font-weight: 500;
+    }
+
+}
