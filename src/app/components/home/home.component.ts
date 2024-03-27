@@ -16,34 +16,38 @@ gsap.registerPlugin(ScrollTrigger, Draggable, Flip, MotionPathPlugin);
 export class HomeComponent implements OnInit, AfterViewInit {
 
   viewCount: number = 0
-  likeCount: number =0
+  likeCount: number = 0
 
   @ViewChild('home', { static: true }) home!: ElementRef<HTMLDivElement>
-  // @ViewChild('cursor') cursor!: ElementRef
+  @ViewChild('menuIcon') menuIcon!: ElementRef
+  @ViewChild('menu') menu!: ElementRef
+
   cursor: any;
   menuItems: any = [
-    {name: 'about', label: 'About', route: '/home/about', clickedOn: false},
-    {name: 'projects', label: 'Projects', route: '/home/projects', clickedOn: false},
-    {name: 'contacts', label: 'Contacts', route: '/home/contacts', clickedOn: false},
+    { name: 'about', label: 'About', route: '/home/about', clickedOn: false },
+    { name: 'projects', label: 'Projects', route: '/home/projects', clickedOn: false },
+    { name: 'contacts', label: 'Contacts', route: '/home/contacts', clickedOn: false },
   ]
   section: any;
-  icons: any[] = [{name: 'LinkedIn icon', iconLink: '../../../assets/linkedin.svg', tooltip: 'Check my linkedIn account', link: 'https://www.linkedin.com/in/simphiwe-gift-nene-2460151a2/'}, {name: 'Github icon', iconLink: '../../../assets/github.svg', tooltip: 'Check my github account', link: 'https://github.com/Simphiwe20'},
-                  {name: 'Facebook icon', iconLink: '../../../assets/facebook.svg', tooltip: 'Check my favenook account', link: 'https://www.facebook.com/mbhele.dlamini/'}, {name: 'Instagram icon', iconLink: '../../../assets/instagram.svg', tooltip: 'Check my instagram account', link: 'https://www.linkedin.com/in/simphiwe-gift-nene-2460151a2/'}];
+  icons: any[] = [{ name: 'LinkedIn icon', iconLink: '../../../assets/linkedin.svg', tooltip: 'Check my linkedIn account', link: 'https://www.linkedin.com/in/simphiwe-gift-nene-2460151a2/' }, { name: 'Github icon', iconLink: '../../../assets/github.svg', tooltip: 'Check my github account', link: 'https://github.com/Simphiwe20' },
+  { name: 'Facebook icon', iconLink: '../../../assets/facebook.svg', tooltip: 'Check my favenook account', link: 'https://www.facebook.com/mbhele.dlamini/' }, { name: 'Instagram icon', iconLink: '../../../assets/instagram.svg', tooltip: 'Check my instagram account', link: 'https://www.linkedin.com/in/simphiwe-gift-nene-2460151a2/' }];
   Isnavigated: boolean = false
   isShowMore: boolean = false
 
-  constructor(private router: Router) { 
+  constructor(private router: Router) {
     this.viewCount++
   }
 
   ngOnInit(): void {
     this.listenToRoute()
     this.cursor = document.querySelector('#cursor')
+
   }
 
   ngAfterViewInit() {
     this.landing()
     this.section = document.querySelector('section')
+    console.log(this.menu.nativeElement.style.display === "")
   }
 
   navigate(fragment: any): void {
@@ -54,10 +58,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
   listenToRoute(): void {
     this.router.events.subscribe(event => {
       console.log(event)
-      if(event instanceof NavigationEnd) {
+      if (event instanceof NavigationEnd) {
         this.menuItems.forEach((menu: any) => {
           menu['clickedOn'] = false
-          if(event.url.includes(menu.name)) {
+          if (event.url.includes(menu.name)) {
             this.Isnavigated = true
             menu['clickedOn'] = true
 
@@ -66,6 +70,22 @@ export class HomeComponent implements OnInit, AfterViewInit {
       }
     })
     console.log(this.Isnavigated)
+  }
+
+  toHome() {
+    this.router.navigate(['/home'])
+    this.isShowMore = false
+  }
+
+  viewMenu() {
+    if(this.menu.nativeElement.style.display === 'block') {
+      this.menu.nativeElement.style.display = 'none'
+    }else if(this.menu.nativeElement.style.display === 'none') {
+      this.menu.nativeElement.style.display = 'block'
+    }else {
+      this.menu.nativeElement.style.display = 'block'
+    }
+    console.log(this.menu.nativeElement.style.display)
   }
 
   countLike(): void {

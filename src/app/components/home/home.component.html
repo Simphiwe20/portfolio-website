@@ -1,4 +1,4 @@
-<div #home class="main-container full-height flex column center-center">
+<div #home class="main-container full-height flex gap column center-center">
     <!-- <div class="cursor" id="cursor">
         
     </div> -->
@@ -6,14 +6,19 @@
         <header class=" full-width flex spacebetween ">
             <div>
                 <div class="initials flex center-center">
-                    <h4 class="no-margin" routerLink="/home">SN</h4>
+                    <h4 class="no-margin" (click)="toHome()">SN</h4>
                 </div>
             </div>
             <nav>
                 <div class="fixed">
-                    <div *ngFor="let menu of menuItems">
-                        <p class="menu" (click)="navigate(menu.name)" [class.color-change]="menu.clickedOn"
-                            routerLinkActive="link" [routerLink]="menu.route">{{menu.label}}</p>
+                    <div class="menuIcon flex col-start-end" (click)="viewMenu()" id='menuIcon'>
+                        <mat-icon>menu</mat-icon>
+                    </div>
+                    <div class="nav" #menu>
+                        <div *ngFor="let menu of menuItems">
+                            <p class="menu" (click)="navigate(menu.name)" [class.color-change]="menu.clickedOn"
+                                routerLinkActive="link">{{menu.label}}</p>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -23,10 +28,9 @@
                 <div class="icons">
                     <div class="m-b-80 flex column col-start-end gap-2 pic">
                         <a [href]="icon.link" *ngFor="let icon of icons" target="_blank">
-                            <img class="pointer"  [matTooltip]='icon.tooltip'
-                            [src]="icon.iconLink" [alt]="icon.name">
+                            <img class="pointer" [matTooltip]='icon.tooltip' [src]="icon.iconLink" [alt]="icon.name">
                         </a>
-                        
+
                     </div>
                 </div>
             </div>
@@ -44,31 +48,25 @@
             </div>
         </div>
     </div>
-</div>
-<div id="about" class="main-container flex column center-center">
-    <div class="">
-        <app-about (isReadMore)="hideOthers($event)"></app-about>
-    </div>
-</div>
-<div id="projects" class="main-container flex-1 full-width" *ngIf="!isShowMore">
-    <div class="">
-        <app-projects></app-projects>
-    </div>
-</div>
-<div id="contacts" class="main-container flex-1 m-t-70 full-width" *ngIf="!isShowMore">
-    <div class="">
-        <app-contacts></app-contacts>
-        <div class="fixed b-r flex gap-05">
-            <div class="flex center-center">
-                <small>{{likeCount}}</small>
-                <mat-icon class="pointer fav" (click)="countLike()">favorite</mat-icon>
-            </div>
-            <div class="flex center-center">
-                <small>1</small>
-                <mat-icon>visibility</mat-icon>
-            </div>
-
+    <div class="fixed b-r flex gap-05">
+        <div class="flex center-center">
+            <small>{{likeCount}}</small>
+            <mat-icon class="pointer fav" (click)="countLike()">favorite</mat-icon>
+        </div>
+        <div class="flex center-center">
+            <small>1</small>
+            <mat-icon>visibility</mat-icon>
         </div>
 
     </div>
+</div>
+
+<div id="about" class=" flex column center-center">
+    <app-about [isShowMore]="isShowMore" (isReadMore)="hideOthers($event)"></app-about>
+</div>
+<div id="projects" class="full-width" *ngIf="!isShowMore">
+    <app-projects></app-projects>
+</div>
+<div id="contacts" class=" full-width" *ngIf="!isShowMore">
+    <app-contacts></app-contacts>
 </div>
