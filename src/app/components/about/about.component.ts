@@ -25,7 +25,7 @@ export class AboutComponent implements AfterViewInit {
   { name: 'Node.js', exp: '1 months', icon: '../../../assets/skills-icons/Node.js.png', per: '40%', value: 40 },
   { name: 'Express', exp: '1 months', icon: '../../../assets/skills-icons/Express.png', per: '60%', value: 60 },
   { name: 'Postman', exp: '1 months', icon: '../../../assets/skills-icons/Postman.png', per: '55%', value: 55 },
-  { name: 'Python', exp: '1 year', icon: '../../../assets/skills-icons/Python.png', per: '60%', value: 60 },
+  { name: 'Python', exp: '1 year', icon: '../../../assets/skills-icons/Python.png', per: '50%', value: 50 },
 ]
 
   ngAfterViewInit(): void {
