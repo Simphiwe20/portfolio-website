@@ -4,8 +4,8 @@
         <form [formGroup]="contactForm" class="flex column gap-1" *ngIf="!isSubmitted">
             <mat-form-field class="example-full-width">
                 <mat-label>Name</mat-label>
-                <input formControlName="name" type="text" matInput placeholder="Ex. pat@example.com">
-                <mat-error *ngIf="contactForm.get('name')?.hasError('required')">
+                <input formControlName="fullName" type="text" matInput placeholder="Ex. pat@example.com">
+                <mat-error *ngIf="contactForm.get('fullName')?.hasError('required')">
                     Name is <strong>required</strong>
                 </mat-error>
             </mat-form-field>

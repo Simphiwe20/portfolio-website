@@ -19,7 +19,7 @@ export class ContactsComponent {
   constructor(private api: ApiServicesService, private snackar: MatSnackBar) {
 
     this.contactForm = new FormGroup({
-      name: new FormControl('',[Validators.required, Validators.min(3)]),
+      fullName: new FormControl('',[Validators.required, Validators.min(3)]),
       email: new FormControl('',[Validators.required, Validators.pattern(this.emailPattern)]),
       cellNumber: new FormControl('',[Validators.required]),
       comment: new FormControl(''),
