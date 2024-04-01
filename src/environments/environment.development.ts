@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    nodeUrl: 'http://localhost:3000'
+    nodeUrl: 'https://portfolio-server-tf8d.onrender.com'
 };
