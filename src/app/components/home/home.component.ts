@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ]
   section: any;
   icons: any[] = [{ name: 'LinkedIn icon', iconLink: '../../../assets/linkedin.svg', tooltip: 'Check my linkedIn account', link: 'https://www.linkedin.com/in/simphiwe-gift-nene-2460151a2/' }, { name: 'Github icon', iconLink: '../../../assets/github.svg', tooltip: 'Check my github account', link: 'https://github.com/Simphiwe20' },
-  { name: 'Facebook icon', iconLink: '../../../assets/facebook.svg', tooltip: 'Check my favenook account', link: 'https://www.facebook.com/mbhele.dlamini/' }, { name: 'Instagram icon', iconLink: '../../../assets/instagram.svg', tooltip: 'Check my instagram account', link: 'https://www.linkedin.com/in/simphiwe-gift-nene-2460151a2/' }];
+  { name: 'Facebook icon', iconLink: '../../../assets/facebook.svg', tooltip: 'Check my favenook account', link: 'https://www.facebook.com/mbhele.dlamini/' }, { name: 'Instagram icon', iconLink: '../../../assets/instagram.svg', tooltip: 'Check my instagram account', link: 'https://www.instagram.com/ebouy_gift/' }];
   Isnavigated: boolean = false
   isShowMore: boolean = false
 
