@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    nodeUrl: 'https://unusual-pocket-mite.cyclic.app'
+    nodeUrl: 'https://portfolio-server-tf8d.onrender.com'
 };
