@@ -16,11 +16,9 @@ export class ProjectsComponent implements AfterViewInit {
 
   projects: any[] = [
 
-    { name: 'Claims Management Systems', year: 'March 2024', technologies: 'MEAN STACK(MongoDB, Express JS, Angular JS and Node JS)', link: 'https://github.com/Simphiwe20/cms.git' },
-    { name: 'Medi-center Management System', year: 'March 2024', technologies: 'MEAN STACK(MongoDB, Express JS, Angular JS and Node JS)', link: 'https://github.com/Simphiwe20/medical-center-systems.git' },
-    { name: 'Operations Systems', year: 'Feb 2024', technologies: 'MEAN STACK(MongoDB, Express JS, Angular JS and Node JS)', link: 'https://github.com/Simphiwe20/operations-system.git' },
-    { name: 'Weather App', year: 'Dec 2023', technologies: 'HTML, CSS & JS', link: 'https://github.com/Simphiwe20/My-Weather-App.git' },
-    { name: 'Basic Calculator', year: 'Nov 2023', technologies: 'HTML, CSS, JS', link: 'https://github.com/Simphiwe20/operations-system.git' },
+    { name: 'Claims Management Systems', year: 'November 2024', descriprion: "Claims Management System was a 2024 group project designed to streamline the insurance claims process by enabling users to submit, track, and manage claims efficiently", technologies: 'MEAN STACK(MongoDB, Express JS, Angular JS and Node JS)', link: 'https://github.com/Simphiwe20/cms.git' },
+    { name: 'Medi-center Management System', year: 'June 2024', descriprion: "Medi-Center System was a 2024 group project developed using MEAN Stack. It was designed to streamline medical appointments by allowing doctors to manage their schedules and patients to book appointments based on doctor availability", technologies: 'MEAN STACK(MongoDB, Express JS, Angular JS and Node JS)', link: 'https://github.com/Simphiwe20/medical-center-systems.git' },
+    { name: 'Operations Systems', year: 'April 2024', descriprion: "Web-based system developed using MEAN Stack. It aimed to automate manual organizational operations such as leave requests, transport requests, and visa applications, improving efficiency for employees, managers, HR personnel, and admins", technologies: 'MEAN STACK(MongoDB, Express JS, Angular JS and Node JS)', link: 'https://github.com/Simphiwe20/operations-systems2.0' }
   ]
   cursor: any
 
