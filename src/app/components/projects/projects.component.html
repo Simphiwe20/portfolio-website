@@ -4,20 +4,22 @@
             <p class="title width-70">Previous Work</p>
         </div>
         <div class="projects" *ngFor="let project of projects">
-            <hr>
+            <hr class="no-m">
             <div class="middle"></div>
             <div class="project flex center-center hover">
-                <div class="width-70 flex gap-2">
-                    <a [href]="project.link" target="_blank">
-                        <h2>{{project.year}}</h2>
-                        <div class="">
+                <a class="width-70 "  [href]="project.link" target="_blank">
+
+                    <div class="flex column">
+                        <h2 class="no-m">{{project.year}}</h2>
+                        <div>
                             <h2>{{project.name}}</h2>
-                            <p>{{project.technologies}}</p>
+                            <p>{{project.descriprion}}</p>
                         </div>
-                    </a>
-                </div>
+                    </div>
+                </a>
+
             </div>
-            <hr>
+            <hr class="no-margin-top">
         </div>
         <div class="cursor"></div>
     </div>
